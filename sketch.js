@@ -19,17 +19,17 @@ function setup() {
 
 	roof = new Roof(400, 200, 260, 20);
 
-	bobObject1 = new Bob(300,400,3);
-	bobObject2 = new Bob(350,400,3);
+	bobObject1 = new Bob(500,400,3);
+	bobObject2 = new Bob(450,400,3);
 	bobObject3 = new Bob(400,400,3);
-	bobObject4 = new Bob(450,400,3);
-	bobObject5 = new Bob(500,400,3);
+	bobObject4 = new Bob(350,400,3);
+	bobObject5 = new Bob(300,400,3);
 
-	rope1 = new Rope(bobObject1.body, roof.body, -bobDiameter*2, 0);
-	rope2 = new Rope(bobObject2.body, roof.body, -bobDiameter*2, 0);
-	rope3 = new Rope(bobObject3.body, roof.body, -bobDiameter*2, 0);
-	rope4 = new Rope(bobObject4.body, roof.body, -bobDiameter*2, 0);
-	rope5 = new Rope(bobObject5.body, roof.body, -bobDiameter*2, 0);
+	rope1 = new Rope(bobObject5.body, roof.body, -bobDiameter*2.5, 0);
+	rope2 = new Rope(bobObject4.body, roof.body, -bobDiameter*1.3, 0);
+	rope3 = new Rope(bobObject3.body, roof.body, -bobDiameter*0, 0);
+	rope4 = new Rope(bobObject2.body, roof.body, -bobDiameter*-1.2, 0);
+	rope5 = new Rope(bobObject1.body, roof.body, -bobDiameter*-2.4, 0);
 
 
 	Engine.run(engine);
@@ -50,6 +50,7 @@ function draw() {
   bobObject5.display();
 
   roof.display();
+
   
   rope1.display();
   rope2.display();
