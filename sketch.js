@@ -4,7 +4,7 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 var bobObject1, bobObject2, bobObject3, bobObject4, bobObject5;
-var rope; 
+var rope1, rope2, rope3, rope4, rope5; 
 
 function setup() {
 	createCanvas(800, 700);
@@ -14,11 +14,17 @@ function setup() {
 	world = engine.world;
 
 	//Create the Bodies Here.
-	bobObject1 = new Bob(200,200,3);
-	bobObject2 = new Bob(200,300,3);
-	bobObject3 = new Bob(200,400,3);
-	bobObject4 = new Bob(200,500,3);
-	bobObject5 = new Bob(200,600,3);
+
+	roof = new Roof(400, 200, 260, 20);
+
+	bobObject1 = new Bob(300,400,3);
+	bobObject2 = new Bob(350,400,3);
+	bobObject3 = new Bob(400,400,3);
+	bobObject4 = new Bob(450,400,3);
+	bobObject5 = new Bob(500,400,3);
+
+	rope1 = new Rope(bobObject1.body, roof.body, -bobDiameter*2, 0);
+
 
 	Engine.run(engine);
   
@@ -27,9 +33,20 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background(0);
+  background(230);
   
   drawSprites();
+
+  bobObject1.display();
+  bobObject2.display();
+  bobObject3.display();
+  bobObject4.display();
+  bobObject5.display();
+
+  roof.display();
+  
+  rope1.display();
+
  
 }
 
